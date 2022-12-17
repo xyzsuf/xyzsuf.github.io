@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Yusuf&#39;s Webpage</title>
+    <link>http://xyzsuf.github.io/tags/linux/</link>
+    <description>Recent content in linux on Yusuf&#39;s Webpage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Nov 2022 23:54:08 +0530</lastBuildDate>
+    
+	<atom:link href="http://xyzsuf.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>slstatus</title>
+      <link>http://xyzsuf.github.io/posts/slstatus/</link>
+      <pubDate>Sun, 27 Nov 2022 16:41:22 +0530</pubDate>
+      
+      <guid>http://xyzsuf.github.io/posts/slstatus/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://tools.suckless.org/slstatus/slstatus.svg&#34; alt=&#34;slstatus&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://xyzsuf.github.io/posts/images/slstatus.png&#34; alt=&#34;statusbar&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+slstatus is a status monitor for window managers that use WM_NAME or stdin to fill the status bar.&lt;/p&gt;
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/xyzsuf/slstatus.git
+cd slstatus
+sudo make clean install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Go to your $HOME directory, and open &amp;ldquo;.xprofile&amp;rdquo; and paste the following:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;slstatus &amp;amp; 
+exec dwm 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After you reboot, the status bar will reload.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Dwm</title>
+      <link>http://xyzsuf.github.io/posts/dwm/</link>
+      <pubDate>Sat, 26 Nov 2022 02:31:58 +0530</pubDate>
+      
+      <guid>http://xyzsuf.github.io/posts/dwm/</guid>
+      <description>&lt;h4 id=&#34;a-guide-to-configure-dwm&#34;&gt;&lt;em&gt;a guide to configure dwm&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;img src=&#34;https://dwm.suckless.org/screenshots/dwm-20100318.png&#34; alt=&#34;DWM&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;dwm is a minimal dynamic window manager for X. The best part about dwm is that it does not have a config file, rather you need to configure it from source.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;
+Before installing dwm, we need a few packages just in case if it is not already installed.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -S vim git base-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To install dwm, you can use git&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git clone &lt;a href=&#34;https://git.suckless.org/dwm&#34;&gt;https://git.suckless.org/dwm&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;br&gt;
+Additionally you would also need st &amp;ndash;&amp;gt; suckless&amp;rsquo; simple terminal, since dwm choose st as the default terminal emulator, and dmenu &amp;ndash;&amp;gt; suckless&amp;rsquo; dynamic menu.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://git.suckless.org/st &amp;amp;&amp;amp; https://git.suckless.org/dmenu
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+&lt;p&gt;Note: If you want to change the default MOD key to the windows key (instead of the ALT key) which is the default - you can &lt;strong&gt;cd&lt;/strong&gt;  into the dwm directory and open &amp;ldquo;config.h&amp;rdquo; file.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://xyzsuf.github.io/posts/images/config.png&#34; alt=&#34;mod&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You need to change MOD1 to MOD4 as shown.&lt;/p&gt;
+&lt;p&gt;Also, if you would like to change the default keybinding to open up a terminal with (Winkey + return)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://xyzsuf.github.io/posts/images/keybind.png&#34; alt=&#34;Replace Zoom Key Binding with Terminal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Replace the &amp;ldquo;ShiftMask&amp;rdquo; keybinding in line 56 as shown above, and add it in the zoom keybinding, or it will create a conflict while you compile the source code.&lt;/p&gt;
+&lt;p&gt;Once you have it installed, you need to &lt;strong&gt;cd&lt;/strong&gt; into the &lt;em&gt;dwm&lt;/em&gt; directory, where you had cloned the repository, and then type the following command.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; sudo make clean install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Follow the same steps for dmenu and st.
+&lt;br&gt;
+To launch dwm you need to set up ~/.xinitrc with atleast &lt;strong&gt;exec dwm&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;adding-dwm-to-xsessions&#34;&gt;Adding DWM to Xsessions&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;
+If you are using a desktop environment, follow the commands below to add it to Xsessions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cd /usr/share/xsesssions&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then, You can create a file by typing &lt;strong&gt;sudo vim DWM.desktop&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;And then, you can enter the following in the file verbatim:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Exec=/usr/local/bin/dwm
+Type=Application
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can configure dwm by using the &amp;ldquo;config.h&amp;rdquo; file.&lt;/p&gt;
+&lt;h2 id=&#34;adding-wallpaper&#34;&gt;Adding Wallpaper&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;
+Install &lt;a href=&#34;https://github.com/stoeckmann/xwallpaper&#34;&gt;xwallpaper&lt;/a&gt; and add it to your ~/.xprofile.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;xwallpaper --zoom ~/Pictures/image.jpeg
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Sed</title>
+      <link>http://xyzsuf.github.io/posts/sed/</link>
+      <pubDate>Fri, 25 Nov 2022 23:54:08 +0530</pubDate>
+      
+      <guid>http://xyzsuf.github.io/posts/sed/</guid>
+      <description>&lt;h4 id=&#34;what-is-sed&#34;&gt;&lt;strong&gt;What is sed?&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;em&gt;Sed is a stream editor, which is used to manipulate text files.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We will work with a sample text file to understand how to use &lt;em&gt;sed&lt;/em&gt;.&lt;/p&gt;
+ &lt;br&gt;
+&lt;p&gt;*&lt;em&gt;Sample Text File&lt;/em&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  this is a test
+  hello world 
+  1 am sed  
+  one two three 
+  3 am coffee
+&lt;/code&gt;&lt;/pre&gt; &lt;br&gt; 
+&lt;h3 id=&#34;usyntaxu&#34;&gt;&lt;u&gt;Syntax&lt;/u&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/regularexpression/replace/g filename
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;unote-u&#34;&gt;&lt;u&gt;NOTE: &lt;/u&gt;&lt;/h4&gt;
+&lt;p&gt;Using sed without the &lt;strong&gt;-i&lt;/strong&gt; does not modify the file. &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;To modify, use &lt;strong&gt;sed -i s/regularexpression/replace/g filename&lt;/strong&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Example 1:&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;Since Global variable &amp;ldquo;g&amp;rdquo; is missing in the end, it replaces only the first &amp;ldquo;t&amp;rdquo; in each line of text.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sed s/t/T/ test&lt;/p&gt;
+&lt;/blockquote&gt;
+ &lt;br&gt;
+&lt;p&gt;&lt;u&gt; Output: &lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;This is a test
+hello world
+1 am sed
+one Two three
+3 am coffee
+&lt;/code&gt;&lt;/pre&gt; &lt;br&gt;
+&lt;p&gt;&lt;u&gt;Example 2:&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;Using the global variable &amp;ldquo;g&amp;rdquo;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sed s/t/T/g test&lt;/p&gt;
+&lt;/blockquote&gt;
+ &lt;br&gt;
+&lt;p&gt;&lt;u&gt; Output: &lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;This is a TesT
+hello world
+1 am sed
+one Two Three
+3 am coffee
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This replaces all t&amp;rsquo;s in the text file.&lt;/p&gt;
+ &lt;br&gt; 
+&lt;p&gt;&lt;u&gt; Example 3:&lt;/u&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; sed  s/ee/ing/g test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;this is a test
+hello world
+1 am sed
+one two thring
+3 am coffing 
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;substitute-beginning-and-end-of-line&#34;&gt;Substitute Beginning and End of line.&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Beginning&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Syntax&lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/^beginofword/replace/g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;u&gt; Example:&lt;/u&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; sed &#39;s/^t/yy/g&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yyhis is a test
+hello world
+1 am sed
+one two three
+3 am coffee
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;End&lt;/em&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/endofword$/replace/g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;u&gt; Example:&lt;/u&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;gt; sed &#39;s/ee$/oooo/g&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;this is a test
+hello world
+1 am sed
+one two throooo
+3 am coffoooo
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    
+    
+    
+    
+    <item>
+      <title>first post</title>
+      <link>http://xyzsuf.github.io/posts/welcome/</link>
+      <pubDate>Sun, 06 Nov 2022 20:43:34 +0530</pubDate>
+      
+      <guid>http://xyzsuf.github.io/posts/welcome/</guid>
+      <description>&lt;p&gt;Hello There!&lt;/p&gt;
+&lt;p&gt;Thank you for visiting my personal web page!&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>

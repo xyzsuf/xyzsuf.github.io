@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="hello, friend.">
+    
+    <link rel="shortcut icon" href="http://xyzsuf.github.io/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://xyzsuf.github.io/posts/dwm/" />
+    <title>Dwm</title>
+</head>
+<body><header id="banner">
+	<h2><a href="http://xyzsuf.github.io">Yusuf&#39;s Webpage</a></h2>
+	<br><br>
+    <nav>
+        <ul>
+            <li>
+                <a href="/software/" title="">software</a>
+            </li><li>
+                <a href="/posts/" title="">posts</a>
+            </li><li>
+                <a href="/resume/" title="">resume</a>
+            </li><li>
+                <a href="/contact/" title="">contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Dwm</h1>
+        <div>
+                <time>November 26, 2022</time>
+            </div>
+    </header><h4 id="a-guide-to-configure-dwm"><em>a guide to configure dwm</em></h4>
+<p><br>
+<img src="https://dwm.suckless.org/screenshots/dwm-20100318.png" alt="DWM"></p>
+<br/>
+<p>dwm is a minimal dynamic window manager for X. The best part about dwm is that it does not have a config file, rather you need to configure it from source.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p><br>
+Before installing dwm, we need a few packages just in case if it is not already installed.</p>
+<pre tabindex="0"><code>sudo pacman -S vim git base-devel
+</code></pre><h2 id="install">Install</h2>
+<blockquote>
+<p>To install dwm, you can use git</p>
+<blockquote>
+<p>git clone <a href="https://git.suckless.org/dwm">https://git.suckless.org/dwm</a></p>
+</blockquote>
+</blockquote>
+<br>
+<p><br>
+Additionally you would also need st &ndash;&gt; suckless&rsquo; simple terminal, since dwm choose st as the default terminal emulator, and dmenu &ndash;&gt; suckless&rsquo; dynamic menu.</p>
+<pre tabindex="0"><code>git clone https://git.suckless.org/st &amp;&amp; https://git.suckless.org/dmenu
+</code></pre><br>
+<p>Note: If you want to change the default MOD key to the windows key (instead of the ALT key) which is the default - you can <strong>cd</strong>  into the dwm directory and open &ldquo;config.h&rdquo; file.</p>
+<p><img src="/posts/images/config.png" alt="mod"></p>
+<p>You need to change MOD1 to MOD4 as shown.</p>
+<p>Also, if you would like to change the default keybinding to open up a terminal with (Winkey + return)</p>
+<p><img src="/posts/images/keybind.png" alt="Replace Zoom Key Binding with Terminal"></p>
+<p>Replace the &ldquo;ShiftMask&rdquo; keybinding in line 56 as shown above, and add it in the zoom keybinding, or it will create a conflict while you compile the source code.</p>
+<p>Once you have it installed, you need to <strong>cd</strong> into the <em>dwm</em> directory, where you had cloned the repository, and then type the following command.</p>
+<pre tabindex="0"><code> sudo make clean install
+</code></pre><p>Follow the same steps for dmenu and st.
+<br>
+To launch dwm you need to set up ~/.xinitrc with atleast <strong>exec dwm</strong></p>
+<h2 id="adding-dwm-to-xsessions">Adding DWM to Xsessions</h2>
+<p><br>
+If you are using a desktop environment, follow the commands below to add it to Xsessions.</p>
+<blockquote>
+<p>cd /usr/share/xsesssions</p>
+</blockquote>
+<p>Then, You can create a file by typing <strong>sudo vim DWM.desktop</strong></p>
+<p>And then, you can enter the following in the file verbatim:</p>
+<pre tabindex="0"><code>[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Exec=/usr/local/bin/dwm
+Type=Application
+</code></pre><p>You can configure dwm by using the &ldquo;config.h&rdquo; file.</p>
+<h2 id="adding-wallpaper">Adding Wallpaper</h2>
+<p><br>
+Install <a href="https://github.com/stoeckmann/xwallpaper">xwallpaper</a> and add it to your ~/.xprofile.</p>
+<p>Example:</p>
+<pre tabindex="0"><code>xwallpaper --zoom ~/Pictures/image.jpeg
+</code></pre></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>

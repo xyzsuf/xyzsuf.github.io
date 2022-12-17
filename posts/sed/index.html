@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="hello, friend.">
+    
+    <link rel="shortcut icon" href="http://xyzsuf.github.io/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://xyzsuf.github.io/posts/sed/" />
+    <title>Sed</title>
+</head>
+<body><header id="banner">
+	<h2><a href="http://xyzsuf.github.io">Yusuf&#39;s Webpage</a></h2>
+	<br><br>
+    <nav>
+        <ul>
+            <li>
+                <a href="/software/" title="">software</a>
+            </li><li>
+                <a href="/posts/" title="">posts</a>
+            </li><li>
+                <a href="/resume/" title="">resume</a>
+            </li><li>
+                <a href="/contact/" title="">contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Sed</h1>
+        <div>
+                <time>November 25, 2022</time>
+            </div>
+    </header><h4 id="what-is-sed"><strong>What is sed?</strong></h4>
+<p><br>
+<em>Sed is a stream editor, which is used to manipulate text files.</em></p>
+<p>We will work with a sample text file to understand how to use <em>sed</em>.</p>
+ <br>
+<p>*<em>Sample Text File</em></p>
+<pre tabindex="0"><code>  this is a test
+  hello world 
+  1 am sed  
+  one two three 
+  3 am coffee
+</code></pre> <br> 
+<h3 id="usyntaxu"><u>Syntax</u></h3>
+<pre tabindex="0"><code>sed s/regularexpression/replace/g filename
+</code></pre><h4 id="unote-u"><u>NOTE: </u></h4>
+<p>Using sed without the <strong>-i</strong> does not modify the file. <br></p>
+<p>To modify, use <strong>sed -i s/regularexpression/replace/g filename</strong>
+<br></p>
+<p><u>Example 1:</u></p>
+<p>Since Global variable &ldquo;g&rdquo; is missing in the end, it replaces only the first &ldquo;t&rdquo; in each line of text.</p>
+<blockquote>
+<p>sed s/t/T/ test</p>
+</blockquote>
+ <br>
+<p><u> Output: </u></p>
+<pre tabindex="0"><code>This is a test
+hello world
+1 am sed
+one Two three
+3 am coffee
+</code></pre> <br>
+<p><u>Example 2:</u></p>
+<p>Using the global variable &ldquo;g&rdquo;</p>
+<blockquote>
+<p>sed s/t/T/g test</p>
+</blockquote>
+ <br>
+<p><u> Output: </u></p>
+<pre tabindex="0"><code>This is a TesT
+hello world
+1 am sed
+one Two Three
+3 am coffee
+</code></pre><p>This replaces all t&rsquo;s in the text file.</p>
+ <br> 
+<p><u> Example 3:</u></p>
+<pre><code>&gt; sed  s/ee/ing/g test
+</code></pre>
+<p><br>
+<u>Output:</u></p>
+<pre tabindex="0"><code>this is a test
+hello world
+1 am sed
+one two thring
+3 am coffing 
+</code></pre><h4 id="substitute-beginning-and-end-of-line">Substitute Beginning and End of line.</h4>
+<p><em>Beginning</em></p>
+<p><u>Syntax</u></p>
+<pre tabindex="0"><code>sed s/^beginofword/replace/g
+</code></pre><p><u> Example:</u></p>
+<pre><code>&gt; sed 's/^t/yy/g'
+</code></pre>
+<p><br>
+<u>Output:</u></p>
+<pre tabindex="0"><code>yyhis is a test
+hello world
+1 am sed
+one two three
+3 am coffee
+</code></pre><p><em>End</em></p>
+<pre tabindex="0"><code>sed s/endofword$/replace/g
+</code></pre><p><u> Example:</u></p>
+<pre><code> &gt; sed 's/ee$/oooo/g'
+</code></pre>
+<p><br>
+<u>Output:</u></p>
+<pre tabindex="0"><code>this is a test
+hello world
+1 am sed
+one two throooo
+3 am coffoooo
+</code></pre></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
