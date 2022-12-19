@@ -40,7 +40,7 @@
 <em>Sed is a stream editor, which is used to manipulate text files.</em></p>
 <p>We will work with a sample text file to understand how to use <em>sed</em>.</p>
  <br>
-<p>*<em>Sample Text File</em></p>
+<p><em>Sample Text File</em></p>
 <pre tabindex="0"><code>  this is a test
   hello world 
   1 am sed  
@@ -51,7 +51,7 @@
 <pre tabindex="0"><code>sed s/regularexpression/replace/g filename
 </code></pre><h4 id="unote-u"><u>NOTE: </u></h4>
 <p>Using sed without the <strong>-i</strong> does not modify the file. <br></p>
-<p>To modify, use <strong>sed -i s/regularexpression/replace/g filename</strong>
+<p>To modify, use <strong>sed -i</strong>
 <br></p>
 <p><u>Example 1:</u></p>
 <p>Since Global variable &ldquo;g&rdquo; is missing in the end, it replaces only the first &ldquo;t&rdquo; in each line of text.</p>
@@ -81,8 +81,9 @@ one Two Three
 </code></pre><p>This replaces all t&rsquo;s in the text file.</p>
  <br> 
 <p><u> Example 3:</u></p>
-<pre><code>&gt; sed  s/ee/ing/g test
-</code></pre>
+<blockquote>
+<p>sed  s/ee/ing/g test</p>
+</blockquote>
 <p><br>
 <u>Output:</u></p>
 <pre tabindex="0"><code>this is a test
@@ -95,8 +96,9 @@ one two thring
 <p><u>Syntax</u></p>
 <pre tabindex="0"><code>sed s/^beginofword/replace/g
 </code></pre><p><u> Example:</u></p>
-<pre><code>&gt; sed 's/^t/yy/g'
-</code></pre>
+<blockquote>
+<p>sed &rsquo;s/^t/yy/g'</p>
+</blockquote>
 <p><br>
 <u>Output:</u></p>
 <pre tabindex="0"><code>yyhis is a test
@@ -107,10 +109,11 @@ one two three
 </code></pre><p><em>End</em></p>
 <pre tabindex="0"><code>sed s/endofword$/replace/g
 </code></pre><p><u> Example:</u></p>
-<pre><code> &gt; sed 's/ee$/oooo/g'
-</code></pre>
-<p><br>
-<u>Output:</u></p>
+<blockquote>
+<p>sed &rsquo;s/ee$/oooo/g'
+<br></p>
+</blockquote>
+<p><u>Output:</u></p>
 <pre tabindex="0"><code>this is a test
 hello world
 1 am sed

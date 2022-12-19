@@ -107,7 +107,7 @@ Install &lt;a href=&#34;https://github.com/stoeckmann/xwallpaper&#34;&gt;xwallpa
 &lt;em&gt;Sed is a stream editor, which is used to manipulate text files.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;We will work with a sample text file to understand how to use &lt;em&gt;sed&lt;/em&gt;.&lt;/p&gt;
  &lt;br&gt;
-&lt;p&gt;*&lt;em&gt;Sample Text File&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Sample Text File&lt;/em&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  this is a test
   hello world 
   1 am sed  
@@ -118,7 +118,7 @@ Install &lt;a href=&#34;https://github.com/stoeckmann/xwallpaper&#34;&gt;xwallpa
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/regularexpression/replace/g filename
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;unote-u&#34;&gt;&lt;u&gt;NOTE: &lt;/u&gt;&lt;/h4&gt;
 &lt;p&gt;Using sed without the &lt;strong&gt;-i&lt;/strong&gt; does not modify the file. &lt;br&gt;&lt;/p&gt;
-&lt;p&gt;To modify, use &lt;strong&gt;sed -i s/regularexpression/replace/g filename&lt;/strong&gt;
+&lt;p&gt;To modify, use &lt;strong&gt;sed -i&lt;/strong&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;Example 1:&lt;/u&gt;&lt;/p&gt;
 &lt;p&gt;Since Global variable &amp;ldquo;g&amp;rdquo; is missing in the end, it replaces only the first &amp;ldquo;t&amp;rdquo; in each line of text.&lt;/p&gt;
@@ -148,8 +148,9 @@ one Two Three
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This replaces all t&amp;rsquo;s in the text file.&lt;/p&gt;
  &lt;br&gt; 
 &lt;p&gt;&lt;u&gt; Example 3:&lt;/u&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; sed  s/ee/ing/g test
-&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sed  s/ee/ing/g test&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;br&gt;
 &lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;this is a test
@@ -162,8 +163,9 @@ one two thring
 &lt;p&gt;&lt;u&gt;Syntax&lt;/u&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/^beginofword/replace/g
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;u&gt; Example:&lt;/u&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; sed &#39;s/^t/yy/g&#39;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sed &amp;rsquo;s/^t/yy/g&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;br&gt;
 &lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yyhis is a test
@@ -174,10 +176,11 @@ one two three
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;End&lt;/em&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed s/endofword$/replace/g
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;u&gt; Example:&lt;/u&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt; sed &#39;s/ee$/oooo/g&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br&gt;
-&lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sed &amp;rsquo;s/ee$/oooo/g&#39;
+&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;u&gt;Output:&lt;/u&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;this is a test
 hello world
 1 am sed
@@ -187,19 +190,6 @@ one two throooo
     </item>
     
     
-    
-    
-    
-    <item>
-      <title>first post</title>
-      <link>http://xyzsuf.github.io/posts/welcome/</link>
-      <pubDate>Sun, 06 Nov 2022 20:43:34 +0530</pubDate>
-      
-      <guid>http://xyzsuf.github.io/posts/welcome/</guid>
-      <description>&lt;p&gt;Hello There!&lt;/p&gt;
-&lt;p&gt;Thank you for visiting my personal web page!&lt;/p&gt;
-</description>
-    </item>
     
     
     
